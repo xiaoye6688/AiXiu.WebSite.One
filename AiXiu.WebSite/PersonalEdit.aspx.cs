@@ -25,8 +25,6 @@ namespace AiXiu.WebSite
                 {
                     string json = sr.ReadToEnd();
                     district = JsonConvert.DeserializeObject<District>(json);
-                    string jsonStr = sr.ReadToEnd();
-                    district = JsonConvert.DeserializeObject<District>(jsonStr);
                 }
 
             }
@@ -42,16 +40,21 @@ namespace AiXiu.WebSite
         }
         protected void BindProvince() {
             //3.1、绑定某个省份的下拉框列表，下拉框设置数据源等属性，选中传入省份
-           // ddlProvince.DataSource = district.Provinces;
+            ddlProvince.DataSource = district.Provinces;
             ddlProvince.DataTextField = "ProvinceName";
             ddlProvince.DataValueField = "ProvinceName";
             ddlProvince.DataBind();
+            ddlProvince.Items.Insert(0, ddlTips);
         }
         protected void btnProfile_Click(object sender, EventArgs e)
         {
 
         }
-
+        /// <summary>
+        /// 选择省份时的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ddlProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
             //获取选中的省份名称
