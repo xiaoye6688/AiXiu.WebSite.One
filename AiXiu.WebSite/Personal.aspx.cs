@@ -17,30 +17,56 @@ namespace AiXiu.WebSite
             if (!Page.IsPostBack)
             {
                 //读取用户资料
-                TBUsers user = IdentityManager.ReadUser();
-                //显示用户资料
-                this.imgAvatar.ImageUrl = user.Avatar??"imgs/avatar.jpg";
-                this.lblNickName.Text = user.NickName??$"用户{user.Id}";
-                switch (user.Sex)
+                TBUsers tBUsers = IdentityManager.ReadUser();
+                if (tBUsers != null)
                 {
-                    case 1:
-                        this.lblSex.Text = "小哥哥";
-                        this.lblSex.CssClass += " bg-color-blue";
-                        break;
-                    case 2:
-                        this.lblSex.Text = "小姐姐";
-                        this.lblSex.CssClass += " bg-color-pink";
-                        break;
-                    default:
-                        this.lblSex.Visible = false;
-                        break;
+                    imgAvatar.ImageUrl = tBUsers.Avatar ?? "/imgs/avatar.jpg";
+
+                    lblNickName.Text = tBUsers.NickName ?? tBUsers.Id.ToString(); 
+                    switch (tBUsers.Sex)
+                    {
+                        case 1:
+                            this.lblSex.Text = "小哥哥";
+                            this.lblSex.CssClass += " bg-color-blue";
+                            break;
+                        case 2:
+                            this.lblSex.Text = "小姐姐";
+                            this.lblSex.CssClass += " bg-color-pink";
+                            break;
+                        default:
+                            this.lblSex.Visible = false;
+                            break;
+                    }
+
+                    lblBirthday.Text = tBUsers.Birthday.HasValue ? tBUsers.Birthday.Value.ToString("M") : "未知";
+                    lblHobby.Text = tBUsers.Hobby;
+                    lblAddress.Text = tBUsers.ADDress;
+
                 }
-                this.lblAddress.Text = user.ADDress ?? "未知地";
-                this.lblBirthday.Text = user.Birthday.HasValue ? user.Birthday.Value.ToString("M"):"未设置";
-                this.lblHobby.Text = user.Hobby ?? "未添加";
+                //显示用户资料
+                //this.imgAvatar.ImageUrl = tBUsers.Avatar  ??  "/imgs/avatar.jpg";
+                //this.lblNickName.Text = tBUsers.NickName ?? $"用户{tBUsers.Id}";
+                //switch (tBUsers.Sex)
+                //{
+                //    case 1:
+                //        this.lblSex.Text = "小哥哥";
+                //        this.lblSex.CssClass += " bg-color-blue";
+                //        break;
+                //    case 2:
+                //        this.lblSex.Text = "小姐姐";
+                //        this.lblSex.CssClass += " bg-color-pink";
+                //        break;
+                //    default:
+                //        this.lblSex.Visible = false;
+                //        break;
+                //}
+                //this.lblAddress.Text = tBUsers.ADDress ?? "未知地";
+                //this.lblBirthday.Text = tBUsers.Birthday.HasValue ? tBUsers.Birthday.Value.ToString("M"):"未设置";
+                //this.lblHobby.Text = tBUsers.Hobby ?? "未添加";
 
             }
 
         }
+
     }
 }

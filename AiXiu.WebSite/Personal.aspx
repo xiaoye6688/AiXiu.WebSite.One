@@ -50,7 +50,7 @@
             <div class="block block-strong personal margin-top-none">
                 <div class="row">
                     <div class="col-30">
-                        <div class="avatar float-right">w
+                        <div class="avatar float-right">
                             <a class="edit external edit" href="AvatarEdit.aspx"><i class="f7-icons text-color-gray size-22">camera_viewfinder</i></a>
                             <asp:Image ID="imgAvatar" runat="server" />
                         </div>
