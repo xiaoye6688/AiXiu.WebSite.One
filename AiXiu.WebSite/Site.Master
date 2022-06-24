@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="AiXiu.WebSite.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <title>爱秀短视频</title>
+    <link href="lib/framework7/framework7-bundle.min.css" rel="stylesheet" />
+    <link href="lib/framework7-icons/css/framework7-icons.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formMain" runat="server">
+         <div id="app">
+            <div class="statusbar"></div>
+            <div class="view view-main">
+                <asp:ContentPlaceHolder runat="server" ID="BodyContent" />
+            </div>
+        </div>
+      <script src="lib/framework7/framework7-bundle.min.js"></script>
+        <script>
+            var app = new Framework7({
+                root: '#app',
+                name: '爱秀短视频',
+                id: 'com.aixiu',
+                panel: {
+                    swipe: 'left',
+                },
+                routes: [
+                    {
+                        path: '/about/',
+                        url: 'about.html',
+                    },
+                ]
+            });
+            var mainView = app.views.create('.view-main');
+            var $$ = Dom7;
+        </script>
+        <asp:ContentPlaceHolder ID="ScriptContent" runat="server"></asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
+

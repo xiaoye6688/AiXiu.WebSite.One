@@ -1,0 +1,480 @@
+{
+  "Provinces": [
+    {
+      "ProvinceName": "北京市",
+      "Citys": [
+        { "CityName": "北京市" }
+      ]
+    },
+    {
+      "ProvinceName": "天津市",
+      "Citys": [
+        { "CityName": "天津市" }
+      ]
+    },
+    {
+      "ProvinceName": "上海市",
+      "Citys": [
+        { "CityName": "上海市" }
+      ]
+    },
+    {
+      "ProvinceName": "重庆市",
+      "Citys": [
+        { "CityName": "重庆市" }
+      ]
+    },
+    {
+      "ProvinceName": "河北省",
+      "Citys": [
+        { "CityName": "石家庄市" },
+        { "CityName": "唐山市" },
+        { "CityName": "秦皇岛市" },
+        { "CityName": "邯郸市" },
+        { "CityName": "邢台市" },
+        { "CityName": "保定市" },
+        { "CityName": "张家口市" },
+        { "CityName": "承德市" },
+        { "CityName": "沧州市" },
+        { "CityName": "廊坊市" },
+        { "CityName": "衡水市" }
+      ]
+    },
+    {
+      "ProvinceName": "山西省",
+      "Citys": [
+        { "CityName": "太原市" },
+        { "CityName": "大同市" },
+        { "CityName": "阳泉市" },
+        { "CityName": "长治市" },
+        { "CityName": "晋城市" },
+        { "CityName": "朔州市" },
+        { "CityName": "晋中市" },
+        { "CityName": "运城市" },
+        { "CityName": "忻州市" },
+        { "CityName": "临汾市" },
+        { "CityName": "吕梁市" }
+      ]
+    },
+    {
+      "ProvinceName": "内蒙古自治区",
+      "Citys": [
+        { "CityName": "呼和浩特市" },
+        { "CityName": "包头市" },
+        { "CityName": "乌海市" },
+        { "CityName": "赤峰市" },
+        { "CityName": "通辽市" },
+        { "CityName": "鄂尔多斯市" },
+        { "CityName": "呼伦贝尔市" },
+        { "CityName": "巴彦淖尔市" },
+        { "CityName": "乌兰察布市" }
+      ]
+    },
+    {
+      "ProvinceName": "辽宁省",
+      "Citys": [
+        { "CityName": "沈阳市" },
+        { "CityName": "大连市" },
+        { "CityName": "鞍山市" },
+        { "CityName": "抚顺市" },
+        { "CityName": "本溪市" },
+        { "CityName": "丹东市" },
+        { "CityName": "锦州市" },
+        { "CityName": "营口市" },
+        { "CityName": "阜新市" },
+        { "CityName": "辽阳市" },
+        { "CityName": "盘锦市" },
+        { "CityName": "铁岭市" },
+        { "CityName": "朝阳市" },
+        { "CityName": "葫芦岛市" }
+      ]
+    },
+    {
+      "ProvinceName": "吉林省",
+      "Citys": [
+        { "CityName": "长春市" },
+        { "CityName": "吉林市" },
+        { "CityName": "四平市" },
+        { "CityName": "辽源市" },
+        { "CityName": "通化市" },
+        { "CityName": "白山市" },
+        { "CityName": "松原市" },
+        { "CityName": "白城市" }
+      ]
+    },
+    {
+      "ProvinceName": "黑龙江省",
+      "Citys": [
+        { "CityName": "哈尔滨市" },
+        { "CityName": "齐齐哈尔市" },
+        { "CityName": "鸡西市" },
+        { "CityName": "鹤岗市" },
+        { "CityName": "双鸭山市" },
+        { "CityName": "大庆市" },
+        { "CityName": "伊春市" },
+        { "CityName": "佳木斯市" },
+        { "CityName": "七台河市" },
+        { "CityName": "牡丹江市" },
+        { "CityName": "黑河市" },
+        { "CityName": "绥化市" }
+      ]
+    },
+    {
+      "ProvinceName": "江苏省",
+      "Citys": [
+        { "CityName": "南京市" },
+        { "CityName": "无锡市" },
+        { "CityName": "徐州市" },
+        { "CityName": "常州市" },
+        { "CityName": "苏州市" },
+        { "CityName": "南通市" },
+        { "CityName": "连云港市" },
+        { "CityName": "淮安市" },
+        { "CityName": "盐城市" },
+        { "CityName": "扬州市" },
+        { "CityName": "镇江市" },
+        { "CityName": "泰州市" },
+        { "CityName": "宿迁市" }
+      ]
+    },
+    {
+      "ProvinceName": "浙江省",
+      "Citys": [
+        { "CityName": "杭州市" },
+        { "CityName": "宁波市" },
+        { "CityName": "温州市" },
+        { "CityName": "嘉兴市" },
+        { "CityName": "湖州市" },
+        { "CityName": "绍兴市" },
+        { "CityName": "金华市" },
+        { "CityName": "衢州市" },
+        { "CityName": "舟山市" },
+        { "CityName": "台州市" },
+        { "CityName": "丽水市" }
+      ]
+    },
+    {
+      "ProvinceName": "安徽省",
+      "Citys": [
+        { "CityName": "合肥市" },
+        { "CityName": "芜湖市" },
+        { "CityName": "蚌埠市" },
+        { "CityName": "淮南市" },
+        { "CityName": "马鞍山市" },
+        { "CityName": "淮北市" },
+        { "CityName": "铜陵市" },
+        { "CityName": "安庆市" },
+        { "CityName": "黄山市" },
+        { "CityName": "阜阳市" },
+        { "CityName": "宿州市" },
+        { "CityName": "滁州市" },
+        { "CityName": "六安市" },
+        { "CityName": "宣城市" },
+        { "CityName": "池州市" },
+        { "CityName": "亳州市" }
+      ]
+    },
+    {
+      "ProvinceName": "福建省",
+      "Citys": [
+        { "CityName": "福州市" },
+        { "CityName": "厦门市" },
+        { "CityName": "莆田市" },
+        { "CityName": "三明市" },
+        { "CityName": "泉州市" },
+        { "CityName": "漳州市" },
+        { "CityName": "南平市" },
+        { "CityName": "龙岩市" },
+        { "CityName": "宁德市" }
+      ]
+    },
+    {
+      "ProvinceName": "江西省",
+      "Citys": [
+        { "CityName": "南昌市" },
+        { "CityName": "景德镇市" },
+        { "CityName": "萍乡市" },
+        { "CityName": "九江市" },
+        { "CityName": "抚州市" },
+        { "CityName": "鹰潭市" },
+        { "CityName": "赣州市" },
+        { "CityName": "吉安市" },
+        { "CityName": "宜春市" },
+        { "CityName": "新余市" },
+        { "CityName": "上饶市" }
+      ]
+    },
+    {
+      "ProvinceName": "山东省",
+      "Citys": [
+        { "CityName": "济南市" },
+        { "CityName": "青岛市" },
+        { "CityName": "淄博市" },
+        { "CityName": "枣庄市" },
+        { "CityName": "东营市" },
+        { "CityName": "烟台市" },
+        { "CityName": "潍坊市" },
+        { "CityName": "济宁市" },
+        { "CityName": "泰安市" },
+        { "CityName": "威海市" },
+        { "CityName": "日照市" },
+        { "CityName": "临沂市" },
+        { "CityName": "德州市" },
+        { "CityName": "聊城市" },
+        { "CityName": "滨州市" },
+        { "CityName": "菏泽市" }
+      ]
+    },
+    {
+      "ProvinceName": "河南省",
+      "Citys": [
+        { "CityName": "郑州市" },
+        { "CityName": "开封市" },
+        { "CityName": "洛阳市" },
+        { "CityName": "平顶山市" },
+        { "CityName": "安阳市" },
+        { "CityName": "鹤壁市" },
+        { "CityName": "新乡市" },
+        { "CityName": "焦作市" },
+        { "CityName": "濮阳市" },
+        { "CityName": "许昌市" },
+        { "CityName": "漯河市" },
+        { "CityName": "三门峡市" },
+        { "CityName": "南阳市" },
+        { "CityName": "商丘市" },
+        { "CityName": "信阳市" },
+        { "CityName": "周口市" },
+        { "CityName": "驻马店市" }
+      ]
+    },
+    {
+      "ProvinceName": "湖北省",
+      "Citys": [
+        { "CityName": "武汉市" },
+        { "CityName": "黄石市" },
+        { "CityName": "十堰市" },
+        { "CityName": "宜昌市" },
+        { "CityName": "襄阳市" },
+        { "CityName": "鄂州市" },
+        { "CityName": "荆门市" },
+        { "CityName": "孝感市" },
+        { "CityName": "荆州市" },
+        { "CityName": "黄冈市" },
+        { "CityName": "咸宁市" },
+        { "CityName": "随州市" }
+      ]
+    },
+    {
+      "ProvinceName": "湖南省",
+      "Citys": [
+        { "CityName": "长沙市" },
+        { "CityName": "株洲市" },
+        { "CityName": "湘潭市" },
+        { "CityName": "衡阳市" },
+        { "CityName": "邵阳市" },
+        { "CityName": "岳阳市" },
+        { "CityName": "常德市" },
+        { "CityName": "张家界市" },
+        { "CityName": "湘西土家族苗族自治州" },
+        { "CityName": "益阳市" },
+        { "CityName": "郴州市" },
+        { "CityName": "永州市" },
+        { "CityName": "怀化市" },
+        { "CityName": "娄底市" }
+      ]
+    },
+    {
+      "ProvinceName": "广东省",
+      "Citys": [
+        { "CityName": "广州市" },
+        { "CityName": "韶关市" },
+        { "CityName": "深圳市" },
+        { "CityName": "珠海市" },
+        { "CityName": "汕头市" },
+        { "CityName": "佛山市" },
+        { "CityName": "江门市" },
+        { "CityName": "湛江市" },
+        { "CityName": "茂名市" },
+        { "CityName": "肇庆市" },
+        { "CityName": "惠州市" },
+        { "CityName": "梅州市" },
+        { "CityName": "汕尾市" },
+        { "CityName": "河源市" },
+        { "CityName": "阳江市" },
+        { "CityName": "清远市" },
+        { "CityName": "东莞市" },
+        { "CityName": "中山市" },
+        { "CityName": "潮州市" },
+        { "CityName": "揭阳市" },
+        { "CityName": "云浮市" }
+      ]
+    },
+    {
+      "ProvinceName": "广西壮族自治区",
+      "Citys": [
+        { "CityName": "南宁市" },
+        { "CityName": "柳州市" },
+        { "CityName": "桂林市" },
+        { "CityName": "梧州市" },
+        { "CityName": "北海市" },
+        { "CityName": "防城港市" },
+        { "CityName": "钦州市" },
+        { "CityName": "贵港市" },
+        { "CityName": "玉林市" },
+        { "CityName": "百色市" },
+        { "CityName": "贺州市" },
+        { "CityName": "河池市" },
+        { "CityName": "来宾市" },
+        { "CityName": "崇左市" }
+      ]
+    },
+    {
+      "ProvinceName": "海南省",
+      "Citys": [
+        { "CityName": "海口市" },
+        { "CityName": "三亚市" },
+        { "CityName": "三沙市" },
+        { "CityName": "儋州市" }
+      ]
+    },
+    {
+      "ProvinceName": "四川省",
+      "Citys": [
+        { "CityName": "成都市" },
+        { "CityName": "自贡市" },
+        { "CityName": "攀枝花市" },
+        { "CityName": "泸州市" },
+        { "CityName": "德阳市" },
+        { "CityName": "绵阳市" },
+        { "CityName": "广元市" },
+        { "CityName": "遂宁市" },
+        { "CityName": "内江市" },
+        { "CityName": "乐山市" },
+        { "CityName": "南充市" },
+        { "CityName": "眉山市" },
+        { "CityName": "宜宾市" },
+        { "CityName": "广安市" },
+        { "CityName": "达州市" },
+        { "CityName": "雅安市" },
+        { "CityName": "巴中市" },
+        { "CityName": "资阳市" }
+      ]
+    },
+    {
+      "ProvinceName": "贵州省",
+      "Citys": [
+        { "CityName": "贵阳市" },
+        { "CityName": "六盘水市" },
+        { "CityName": "遵义市" },
+        { "CityName": "安顺市" },
+        { "CityName": "毕节市" },
+        { "CityName": "铜仁市" }
+      ]
+    },
+    {
+      "ProvinceName": "云南省",
+      "Citys": [
+        { "CityName": "昆明市" },
+        { "CityName": "曲靖市" },
+        { "CityName": "玉溪市" },
+        { "CityName": "保山市" },
+        { "CityName": "昭通市" },
+        { "CityName": "丽江市" },
+        { "CityName": "普洱市" },
+        { "CityName": "临沧市" }
+      ]
+    },
+    {
+      "ProvinceName": "西藏自治区",
+      "Citys": [
+        { "CityName": "拉萨市" },
+        { "CityName": "日喀则市" },
+        { "CityName": "昌都市" },
+        { "CityName": "林芝市" },
+        { "CityName": "山南市" },
+        { "CityName": "那曲市" }
+      ]
+    },
+    {
+      "ProvinceName": "陕西省",
+      "Citys": [
+        { "CityName": "西安市" },
+        { "CityName": "铜川市" },
+        { "CityName": "宝鸡市" },
+        { "CityName": "咸阳市" },
+        { "CityName": "渭南市" },
+        { "CityName": "延安市" },
+        { "CityName": "汉中市" },
+        { "CityName": "榆林市" },
+        { "CityName": "安康市" },
+        { "CityName": "商洛市" }
+      ]
+    },
+    {
+      "ProvinceName": "甘肃省",
+      "Citys": [
+        { "CityName": "兰州市" },
+        { "CityName": "嘉峪关市" },
+        { "CityName": "金昌市" },
+        { "CityName": "白银市" },
+        { "CityName": "天水市" },
+        { "CityName": "武威市" },
+        { "CityName": "张掖市" },
+        { "CityName": "平凉市" },
+        { "CityName": "酒泉市" },
+        { "CityName": "庆阳市" },
+        { "CityName": "定西市" },
+        { "CityName": "陇南市" }
+      ]
+    },
+    {
+      "ProvinceName": "青海省",
+      "Citys": [
+        { "CityName": "西宁市" },
+        { "CityName": "海东市" }
+      ]
+    },
+    {
+      "ProvinceName": "宁夏回族自治区",
+      "Citys": [
+        { "CityName": "银川市" },
+        { "CityName": "石嘴山市" },
+        { "CityName": "吴忠市" },
+        { "CityName": "固原市" },
+        { "CityName": "中卫市" }
+      ]
+    },
+    {
+      "ProvinceName": "新疆维吾尔自治区",
+      "Citys": [
+        { "CityName": "乌鲁木齐市" },
+        { "CityName": "克拉玛依市" },
+        { "CityName": "吐鲁番市" },
+        { "CityName": "哈密市" }
+      ]
+    },
+    {
+      "ProvinceName": "台湾省",
+      "Citys": [
+        { "CityName": "台北市" },
+        { "CityName": "新北市" },
+        { "CityName": "桃园市" },
+        { "CityName": "台中市" },
+        { "CityName": "台南市" },
+        { "CityName": "高雄市" }
+      ]
+    },
+    {
+      "ProvinceName": "香港",
+      "Citys": [
+        { "CityName": "香港特别行政区" }
+      ]
+    },
+    {
+      "ProvinceName": "澳门",
+      "Citys": [
+        { "CityName": "澳门特别行政区" }
+      ]
+    }
+  ]
+}
