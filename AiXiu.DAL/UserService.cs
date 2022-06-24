@@ -52,6 +52,13 @@ namespace AiXiu.DAL
             return model;
         }
 
+        public TBLogins GetMobile(string mobileNumber)
+        {
+            AiXiuDB aiXiuModel = new AiXiuDB();
+            var model = aiXiuModel.TBLogins.SingleOrDefault(e => e.MobileNumber == mobileNumber);
+            return model;
+        }
+
         public TBUsers GetTBUsers(int id)
         {
             AiXiuDB aiXiuModel = new AiXiuDB();

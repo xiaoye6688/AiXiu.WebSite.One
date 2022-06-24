@@ -13,6 +13,7 @@ namespace AiXiu.IBLL
 
 
         OperResult<TBUsers> Login(string userName, string pwd);
+        OperResult<TBUsers> Mobile(string mobileNumber, string pwd);
 
         OperResult LoginResult(string userName, string pwd);
     }

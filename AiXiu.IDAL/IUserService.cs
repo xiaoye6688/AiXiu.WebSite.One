@@ -18,6 +18,7 @@ namespace AiXiu.IDAL
 
         //登录  通过username获取该用户名的用户信息
         TBLogins GetLogins(string userName);
+        TBLogins GetMobile(string mobileNumber);
 
 
         TBUsers GetTBUsers(int id);

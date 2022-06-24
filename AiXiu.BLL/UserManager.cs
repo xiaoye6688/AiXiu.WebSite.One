@@ -83,6 +83,42 @@ namespace AiXiu.BLL
             }
         }
 
+        public OperResult<TBUsers> Mobile(string mobileNumber, string pwd)
+        {
+            TBUsers tBUsers = new TBUsers();
+            if (string.IsNullOrWhiteSpace(mobileNumber))
+            {
+                //为空   所以直接返回 错误信息
+                return OperResult<TBUsers>.Failed("电话号码不能为空");
+            }
+            if (string.IsNullOrWhiteSpace(pwd))
+            {
+                //为空   所以直接返回 错误信息
+                return OperResult<TBUsers>.Failed("密码不能为空");
+            }
+            IUserService userService = new UserService();
+            TBLogins tBLogins = userService.GetMobile(mobileNumber);
+            if (tBLogins != null)
+            {
+                //加密处理
+                SHAEncryption sHAEncryption = new SHAEncryption();
+                pwd = sHAEncryption.SHA1Encrypt(pwd);
+                if (pwd.Equals(tBLogins.Password))
+                {
+                    tBUsers = userService.GetTBUsers(tBLogins.Id);
+                    return OperResult<TBUsers>.Succeed(tBUsers);
+                }
+                else
+                {
+                    return OperResult<TBUsers>.Failed("密码不正确");
+                }
+            }
+            else
+            {
+                return OperResult<TBUsers>.Failed("该用户不存在");
+            }
+        }
+
         public OperResult RegUser(TBLogins tBLogins)
         {
             //1、判空
