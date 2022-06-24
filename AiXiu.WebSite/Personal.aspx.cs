@@ -29,7 +29,7 @@ namespace AiXiu.WebSite
                             this.lblSex.Text = "小哥哥";
                             this.lblSex.CssClass += " bg-color-blue";
                             break;
-                        case 2:
+                        case 0:
                             this.lblSex.Text = "小姐姐";
                             this.lblSex.CssClass += " bg-color-pink";
                             break;

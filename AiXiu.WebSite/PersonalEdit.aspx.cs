@@ -44,7 +44,7 @@ namespace AiXiu.WebSite
 
 
                     txtBirthday.Text = tBUsers.Birthday.HasValue ? tBUsers.Birthday.Value.ToString("M") : "";
-                    string[] hobbyList = tBUsers.Hobby.Split(',');//篮球 看电影 网络游戏   string[] hobbyList ={ "篮球","看电影","网络游戏"}
+                    string[] hobbyList = tBUsers.Hobby.Split(' ');//篮球 看电影 网络游戏   string[] hobbyList ={ "篮球","看电影","网络游戏"}
                     foreach (ListItem item in cblHobby.Items)
                     {
                         if (hobbyList.Contains(item.Value))
@@ -54,7 +54,7 @@ namespace AiXiu.WebSite
                     }
                     if (!string.IsNullOrWhiteSpace(tBUsers.ADDress))
                     {
-                        string[] addressList = tBUsers.Hobby.Split(',');
+                        string[] addressList = tBUsers.Hobby.Split(' ');
                         //省份城市 默认项
                         if (addressList.Length > 2)
                         {
