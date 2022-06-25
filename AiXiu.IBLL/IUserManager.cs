@@ -16,5 +16,6 @@ namespace AiXiu.IBLL
         OperResult<TBUsers> Mobile(string mobileNumber, string pwd);
 
         OperResult LoginResult(string userName, string pwd);
+        OperResult<TBUsers>EditWithoutAvatar(TBUsers tBUsers);
     }
 }

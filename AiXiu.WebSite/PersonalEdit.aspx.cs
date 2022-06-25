@@ -10,6 +10,7 @@ using AiXiu.Model;
 using Newtonsoft.Json;
 using System.Text;
 using AiXiu.BLL;
+using AiXiu.IBLL;
 
 namespace AiXiu.WebSite
 {
@@ -44,18 +45,25 @@ namespace AiXiu.WebSite
 
 
                     txtBirthday.Text = tBUsers.Birthday.HasValue ? tBUsers.Birthday.Value.ToString("M") : "";
-                    string[] hobbyList = tBUsers.Hobby.Split(' ');//篮球 看电影 网络游戏   string[] hobbyList ={ "篮球","看电影","网络游戏"}
-                    foreach (ListItem item in cblHobby.Items)
+                    if (!string.IsNullOrWhiteSpace(tBUsers.Hobby))
                     {
-                        if (hobbyList.Contains(item.Value))
+                        string[] hobbyList = tBUsers.Hobby.Split(' ');//篮球 看电影 网络游戏   string[] hobbyList ={ "篮球","看电影","网络游戏"}
+
+                        foreach (ListItem item in cblHobby.Items)
                         {
-                            item.Selected = true;
+                            if (hobbyList.Contains(item.Value))
+                            {
+                                item.Selected = true;
+                            }
                         }
                     }
+                    
+                    
+                    
                     if (!string.IsNullOrWhiteSpace(tBUsers.ADDress))
                     {
                         string[] addressList = tBUsers.ADDress.Split(' ');
-                        //省份城市 默认项
+                        //省份城市 默认项 将数据库的地址展示在页面
                         if (addressList.Length > 1)
                         {
                             string proName = addressList[0];
@@ -100,7 +108,7 @@ namespace AiXiu.WebSite
         }
         protected void btnProfile_Click(object sender, EventArgs e)
         {
-            TBUsers tBUsers = new TBUsers();
+            TBUsers tBUsers = IdentityManager.ReadUser();
             tBUsers.ADDress = $"{ddlProvince.SelectedValue} {ddlCity.SelectedValue}";
             tBUsers.NickName = txtNickName.Text;
             if (!string.IsNullOrWhiteSpace(txtBirthday.Text))
@@ -122,6 +130,18 @@ namespace AiXiu.WebSite
                 string hobbyStr = string.Join(" ", hobbyList);
                 tBUsers.Hobby = hobbyStr;
             }
+            IUserManager userManager = new UserManager();
+            OperResult<TBUsers> operResult = userManager.EditWithoutAvatar(tBUsers);
+            if (operResult.StatusCode == StatusCode.Succeed)
+            {
+                IdentityManager.SaveUser(operResult.Result);
+                PageExtensions.AlertAndRedirect(this, "editPerSuc", operResult.Message, "Personal.aspx");
+            }
+            else
+            {
+                PageExtensions.Alert(this, "editPerError", operResult.Message);
+            }
+           
         }
         /// <summary>
         /// 选择省份时的事件
