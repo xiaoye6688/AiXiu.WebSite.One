@@ -54,12 +54,12 @@ namespace AiXiu.WebSite
                     }
                     if (!string.IsNullOrWhiteSpace(tBUsers.ADDress))
                     {
-                        string[] addressList = tBUsers.Hobby.Split(' ');
+                        string[] addressList = tBUsers.ADDress.Split(' ');
                         //省份城市 默认项
-                        if (addressList.Length > 2)
+                        if (addressList.Length > 1)
                         {
                             string proName = addressList[0];
-                            string cityName = addressList[2];
+                            string cityName = addressList[1];
                             BindProvince(proName);
                             BindCity(proName, cityName);
                         }
@@ -97,14 +97,31 @@ namespace AiXiu.WebSite
             {
                 ddlProvince.SelectedValue = provinceName;
             }
-            else
-            {
-
-            }
         }
         protected void btnProfile_Click(object sender, EventArgs e)
         {
+            TBUsers tBUsers = new TBUsers();
+            tBUsers.ADDress = $"{ddlProvince.SelectedValue} {ddlCity.SelectedValue}";
+            tBUsers.NickName = txtNickName.Text;
+            if (!string.IsNullOrWhiteSpace(txtBirthday.Text))
+            {
+                tBUsers.Birthday = DateTime.Parse(txtBirthday.Text);
+            }
+            tBUsers.Sex = int.Parse(ddlSex.SelectedValue);
+            List<string> hobbyList = new List<string>();
 
+            foreach (ListItem item in cblHobby.Items)
+            {
+                if (item.Selected)
+                {
+                    hobbyList.Add(item.Value);
+                }
+            }
+            if (hobbyList.Count > 0)
+            {
+                string hobbyStr = string.Join(" ", hobbyList);
+                tBUsers.Hobby = hobbyStr;
+            }
         }
         /// <summary>
         /// 选择省份时的事件
@@ -142,13 +159,13 @@ namespace AiXiu.WebSite
             //设置城市默认选中
             if (string.IsNullOrWhiteSpace(cityName))
             {
-                ddlCity.SelectedValue = cityName;
-              //  this.ddlCity.SelectedIndex = 0;
+                //ddlCity.SelectedValue = cityName;
+                this.ddlCity.SelectedIndex = 0;
             }
-            //else
-            //{
-            //    this.ddlCity.SelectedValue = cityName;
-            //}
+            else
+            {
+                this.ddlCity.SelectedValue = cityName;
+            }
         }
     }
 }

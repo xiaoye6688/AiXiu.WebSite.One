@@ -22,5 +22,6 @@ namespace AiXiu.IDAL
 
 
         TBUsers GetTBUsers(int id);
+        TBUsers EditWithoutAvatar(TBUsers tBUsers);
     }
 }
