@@ -15,7 +15,8 @@
             <div class="login-box">
                 <div class="block">
                     <p class="segmented segmented-raised">
-                        <a class="button external" href="Login.aspx?ReturnUrl=<% = Request.QueryString["ReturnUrl"] %>">用户名密码登录</a>
+                         <a class="button external" href="Login.aspx">用户名密码登录</a>
+                        <!--<a class="button external" href="Login.aspx?ReturnUrl=<% = Request.QueryString["ReturnUrl"] %>">用户名密码登录</a>-->
                         <a class="button button-active">手机号密码登录</a>
                     </p>
                 </div>
@@ -52,7 +53,7 @@
                         </ul>
                         <div class="block-footer">
                             <p>登录即代表您同意《用户服务协议》</p>
-                            <p>没有账号？<a href="Register.aspx" class="close-login-screen external">现在注册</a></p>
+                            <p>没有账号？<a href="Reg.aspx" class="close-login-screen external">现在注册</a></p>
                         </div>
                     </div>
                 </div>

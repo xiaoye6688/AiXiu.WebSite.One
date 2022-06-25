@@ -43,7 +43,7 @@
                 .then(function (rst) {
                     // 上传文件数据
                     var xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'ImageUploadHandler.ashx?length=' + rst.base64Len);
+                    xhr.open('POST', 'Ashx/ImageUploadHandler.ashx?length=' + rst.base64Len);
                     xhr.onload = function () {
                         if (xhr.status === 200) {
                             document.getElementById('BodyContent_hfAvatar').value = xhr.responseText;

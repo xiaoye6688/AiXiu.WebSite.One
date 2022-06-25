@@ -117,6 +117,9 @@
     <Compile Include="Ashx\CaptchaHandler.ashx.cs">
       <DependentUpon>CaptchaHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Ashx\ImageUploadHandler.ashx.cs">
+      <DependentUpon>ImageUploadHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="AvatarEdit.aspx.cs">
       <DependentUpon>AvatarEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,6 +188,7 @@
     <Content Include="lib\framework7-icons\fonts\Framework7Icons-Regular.woff" />
     <Content Include="lib\framework7-icons\fonts\Framework7Icons-Regular.woff2" />
     <Content Include="App_Data\district.json" />
+    <Content Include="Ashx\ImageUploadHandler.ashx" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
