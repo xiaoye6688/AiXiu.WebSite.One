@@ -13,6 +13,7 @@ namespace AiXiu.BLL
 {
     public class UserManager: IUserManager
     {
+        //密码登录
         public OperResult<TBUsers> Login(string userName, string pwd)
         {
             TBUsers tBUsers = new TBUsers();
@@ -82,7 +83,7 @@ namespace AiXiu.BLL
                 return OperResult.Failed("该用户不存在");
             }
         }
-
+        //手机号登陆
         public OperResult<TBUsers> Mobile(string mobileNumber, string pwd)
         {
             TBUsers tBUsers = new TBUsers();

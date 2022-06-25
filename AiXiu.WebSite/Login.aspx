@@ -16,7 +16,7 @@
                 <div class="block">
                     <p class="segmented segmented-raised">
                         <a class="button button-active">用户名密码登录</a>
-                        <a class="button external" href="Mobile.aspx?ReturnUrl=<% = Request.QueryString["ReturnUrl"] %>">手机号密码登录</a>
+                        <a class="button external" href="Mobile.aspx">手机号密码登录</a>
                     </p>
                 </div>
                 <div class="list">
