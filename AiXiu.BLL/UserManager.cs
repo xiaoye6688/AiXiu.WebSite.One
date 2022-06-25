@@ -176,6 +176,15 @@ namespace AiXiu.BLL
                 return OperResult.Failed();
             }
         }
-    
-}
+
+        public OperResult<TBUsers> EditAvatar(TBUsers tBUsers)
+        {
+            IUserService userService = new UserService();
+            TBUsers usersDbModel = userService.EditAvatar(tBUsers);
+            if (usersDbModel != null)
+            { return OperResult<TBUsers>.Succeed(usersDbModel); }
+
+            return OperResult<TBUsers>.Failed("修改失败");
+        }
+    }
 }

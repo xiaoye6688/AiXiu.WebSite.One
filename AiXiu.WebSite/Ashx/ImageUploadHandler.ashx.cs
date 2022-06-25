@@ -45,10 +45,11 @@ namespace AiXiu.WebSite.Ashx
             {
                 context.Response.StatusCode = 400;
                 context.Response.End();
+                return;
             }
             string imgName = Guid.NewGuid().ToString("N");
             string imgPath = context.Server.MapPath("~/avatar")+"/" + imgName + ".jpg";
-            string imgUrl = "/avatar" + imgName + "/" + ".jpg";
+            string imgUrl = "avatar/" + imgName + ".jpg";
             byte[] imgByte = baseByte(context);
             using (MemoryStream memoryStream = new MemoryStream(imgByte))
             {
@@ -56,11 +57,6 @@ namespace AiXiu.WebSite.Ashx
                 image.Save(imgPath, ImageFormat.Jpeg);
             }
             context.Response.Write(imgUrl);
-            //2、读取编码流长度，若小于等于0则返回400，结束响应，返回
-
-
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
         }
         public byte[] baseByte(HttpContext context)
         {

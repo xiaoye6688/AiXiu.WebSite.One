@@ -45,6 +45,23 @@ namespace AiXiu.DAL
             }
         }
 
+        public TBUsers EditAvatar(TBUsers tBUsers)
+        {
+            AiXiuDB aiXiuDB = new AiXiuDB();
+            var tbUserDBModel = aiXiuDB.TBUsers.SingleOrDefault(e => e.Id == tBUsers.Id);
+            if (tbUserDBModel != null)
+            {
+                tbUserDBModel.Avatar = tBUsers.Avatar;
+                if (aiXiuDB.SaveChanges() > 0)
+                {
+                    return tbUserDBModel;
+                }
+
+                return null;
+            }
+            return null;
+        }
+
         public TBUsers EditWithoutAvatar(TBUsers tBUsers)
         {
             AiXiuDB aiXiuDB = new AiXiuDB();
@@ -56,10 +73,14 @@ namespace AiXiu.DAL
                 tbUserDBModel.Birthday = tBUsers.Birthday;
                 tbUserDBModel.Sex = tBUsers.Sex;
                 tbUserDBModel.Hobby = tBUsers.Hobby;
-                aiXiuDB.SaveChanges();
-                return tbUserDBModel;
+                if (aiXiuDB.SaveChanges()>0)
+                {
+                    return tbUserDBModel;
+                }
+                
+                return null;
             }
-            return tbUserDBModel;
+            return null;
         }
 
         public TBLogins GetLogins(string userName)
