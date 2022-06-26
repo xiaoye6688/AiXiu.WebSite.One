@@ -28,7 +28,7 @@ namespace AiXiu.WebSite
                 TBUsers tBUsers = operResult.Result;
                 IdentityManager.SaveUser(tBUsers);
                 string url = "/Default.aspx";
-                if (Request.QueryString["ReturnUrl"]!=null)
+                if (Request.QueryString["ReturnUrl"]==null)
                 {
                     url = Request.QueryString["ReturnUrl"];
                 }
