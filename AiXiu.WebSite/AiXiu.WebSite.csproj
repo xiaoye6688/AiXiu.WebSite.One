@@ -211,7 +211,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="avatar\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
