@@ -191,6 +191,13 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ashx\CaptchaHandler.ashx" />
@@ -203,6 +210,7 @@
     <Content Include="Ashx\VideoUploadHandler.ashx" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

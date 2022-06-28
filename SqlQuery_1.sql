@@ -30,8 +30,8 @@ create table TBVideos(
 VideoId varchar(100) primary key,
 UserId int references TBUsers(Id),
 Headline nvarchar(20),
-Location varchar(20),
+Location varchar(100),
 CoverURL varchar(20),
-Status nvarchar(50),
+Status int,
 UploadTime varchar(100)
 )

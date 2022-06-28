@@ -1,26 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AiXiu.WebSite.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AiXiu.WebSite.Default"  %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
-        .videos {
-            width: 100%;
-        }
-
-            .videos .item {
-                width: 49%;
-                margin-left: 0.5%;
-                margin-right: 0.5%;
-                float: left;
-                padding-bottom: 0.6em;
-            }
-
-            .videos img {
-                width: 100%;
-                height: auto;
-            }
+        .videos { width: 100%; }
+            .videos .item { width: 49%; margin-left: 0.5%; margin-right: 0.5%; float: left; padding-bottom: 0.6em; }
+            .videos img { width: 100%; height: auto; }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
     <div class="page" data-page="videos">
         <div class="page-content">
             <div class="block block-strong margin-top-none">
@@ -70,7 +57,7 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ScriptContent" runat="server">
+<asp:Content ID="ScriptContent" ContentPlaceHolderID="ScriptContent" runat="server">
     <script src="lib/masonry-layout/dist/masonry.pkgd.min.js"></script>
     <script>
         // 图片懒加载
