@@ -23,8 +23,7 @@ namespace AiXiu.Model
         [StringLength(20)]
         public string CoverURL { get; set; }
 
-        [StringLength(50)]
-        public string Status { get; set; }
+        public int? Status { get; set; }
 
         [StringLength(100)]
         public string UploadTime { get; set; }

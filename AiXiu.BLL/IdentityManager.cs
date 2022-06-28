@@ -26,11 +26,11 @@ namespace AiXiu.BLL
             // 生成身份票据
             DateTime timeNow = DateTime.Now;
             FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
-                1, 
-                user.Id.ToString(), 
-                timeNow, 
-                timeNow.AddMonths(1), 
-                false, 
+                1,
+                user.Id.ToString(),
+                timeNow,
+                timeNow.AddMonths(1),
+                false,
                 profileString,
                 FormsAuthentication.FormsCookiePath);
             string ticketString = FormsAuthentication.Encrypt(ticket);
@@ -48,7 +48,7 @@ namespace AiXiu.BLL
         {
             // 读取身份
             string ticketString = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName]?.Value;
-            if(string.IsNullOrWhiteSpace(ticketString))
+            if (string.IsNullOrWhiteSpace(ticketString))
             {
                 return default;
             }

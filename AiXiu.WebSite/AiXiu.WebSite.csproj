@@ -103,6 +103,7 @@
     <Content Include="Mobile.aspx" />
     <Content Include="Personal.aspx" />
     <Content Include="PersonalEdit.aspx" />
+    <Content Include="Publish.aspx" />
     <Content Include="Reg.aspx" />
     <Content Include="Scripts\aliyun-upload-sdk-1.5.2.min.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -119,6 +120,9 @@
     </Compile>
     <Compile Include="Ashx\ImageUploadHandler.ashx.cs">
       <DependentUpon>ImageUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ashx\VideoUploadHandler.ashx.cs">
+      <DependentUpon>VideoUploadHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="AvatarEdit.aspx.cs">
       <DependentUpon>AvatarEdit.aspx</DependentUpon>
@@ -166,6 +170,13 @@
       <DependentUpon>PersonalEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publish.aspx.cs">
+      <DependentUpon>Publish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publish.aspx.designer.cs">
+      <DependentUpon>Publish.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reg.aspx.cs">
       <DependentUpon>Reg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -189,6 +200,7 @@
     <Content Include="lib\framework7-icons\fonts\Framework7Icons-Regular.woff2" />
     <Content Include="App_Data\district.json" />
     <Content Include="Ashx\ImageUploadHandler.ashx" />
+    <Content Include="Ashx\VideoUploadHandler.ashx" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">

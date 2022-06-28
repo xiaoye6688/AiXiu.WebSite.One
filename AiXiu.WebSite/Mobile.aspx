@@ -15,7 +15,7 @@
             <div class="login-box">
                 <div class="block">
                     <p class="segmented segmented-raised">
-                         <a class="button external" href="Login.aspx">用户名密码登录</a>
+                         <a class="button external" href="Login.aspx?ReturnUrl=<% = Request.QueryString["ReturnUrl"] %>">用户名密码登录</a>
                         <!--<a class="button external" href="Login.aspx?ReturnUrl=<% = Request.QueryString["ReturnUrl"] %>">用户名密码登录</a>-->
                         <a class="button button-active">手机号密码登录</a>
                     </p>

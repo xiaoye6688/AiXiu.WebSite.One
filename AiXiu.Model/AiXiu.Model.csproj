@@ -60,6 +60,11 @@
     <Compile Include="TBLogins.cs" />
     <Compile Include="TBUsers.cs" />
     <Compile Include="TBVideos.cs" />
+    <Compile Include="Vod\CreateUploadVideoResult.cs" />
+    <Compile Include="Vod\GetPlayInfoResult.cs" />
+    <Compile Include="Vod\GetVideoInfosResult.cs" />
+    <Compile Include="Vod\VideoInfo.cs" />
+    <Compile Include="Vod\VideoStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

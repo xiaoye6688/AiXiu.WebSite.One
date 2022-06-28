@@ -5,7 +5,6 @@ namespace AiXiu.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using Newtonsoft.Json;
 
     public partial class TBUsers
     {
@@ -37,7 +36,6 @@ namespace AiXiu.Model
 
         [StringLength(100)]
         public string ADDress { get; set; }
-        [JsonIgnore]
 
         public virtual TBLogins TBLogins { get; set; }
 
