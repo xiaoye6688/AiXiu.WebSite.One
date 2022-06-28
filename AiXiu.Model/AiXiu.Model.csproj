@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AiXiuDB.cs" />
+    <Compile Include="District\City.cs" />
+    <Compile Include="District\District.cs" />
+    <Compile Include="District\Province.cs" />
     <Compile Include="OperResult\OperResult.cs" />
     <Compile Include="OperResult\StatusCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
