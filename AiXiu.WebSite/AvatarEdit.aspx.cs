@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AiXiu.BLL;
+using AiXiu.Common;
+using AiXiu.IBLL;
+using AiXiu.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +34,19 @@ namespace AiXiu.WebSite
             //7、定义并实例化一个内存流，以存放图片的字节数组MemoryStream
             //8、使用指定的数据流中嵌入Image，从该数据流创建(Image.FromStream)
             //8、输出相对路径
+            TBUsers tBUsers = IdentityManager.ReadUser();
+            IUserManager userManager = new UserManager();
+            tBUsers.Avatar = hfAvatar.Value;
+            OperResult<TBUsers> operResult = userManager.EditAvatar(tBUsers);
+            if (operResult.StatusCode == StatusCode.Succeed)
+            {
+                IdentityManager.SaveUser(operResult.Result);
+                PageExtensions.AlertAndRedirect(this, "editPerSuc", operResult.Message, "Personal.aspx");
+            }
+            else
+            {
+                PageExtensions.Alert(this, "editPerError", operResult.Message);
+            }
 
         }
        

@@ -48,7 +48,7 @@ namespace AiXiu.WebSite.Ashx
             }
             string imgName = Guid.NewGuid().ToString("N");
             string imgPath = context.Server.MapPath("~/avatar")+"/" + imgName + ".jpg";
-            string imgUrl = "/avatar" + imgName + "/" + ".jpg";
+            string imgUrl = "/avatar/" + imgName  + ".jpg";
             byte[] imgByte = baseByte(context);
             using (MemoryStream memoryStream = new MemoryStream(imgByte))
             {
@@ -60,7 +60,6 @@ namespace AiXiu.WebSite.Ashx
 
 
             context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
         }
         public byte[] baseByte(HttpContext context)
         {

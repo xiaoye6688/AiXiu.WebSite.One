@@ -61,6 +61,21 @@ namespace AiXiu.DAL
             }
             return tbUserDBModel;
         }
+        public TBUsers EditAvatar(TBUsers tBUsers)
+        {
+            AiXiuDB aiXiuModel = new AiXiuDB();
+            var tbUserDBModel = aiXiuModel.TBUsers.FirstOrDefault(t => t.Id == tBUsers.Id);
+            if (tbUserDBModel != null)
+            {
+                tbUserDBModel.Avatar = tBUsers.Avatar;
+                if (aiXiuModel.SaveChanges() > 0)
+                {
+                    return tbUserDBModel;
+                }
+                return null;
+            }
+            return null;
+        }
 
         public TBLogins GetLogins(string userName)
         {
