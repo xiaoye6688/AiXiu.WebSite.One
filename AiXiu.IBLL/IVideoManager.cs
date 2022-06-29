@@ -10,5 +10,9 @@ namespace AiXiu.IBLL
     public interface IVideoManager
     {
         OperResult<CreateUploadVideoResult> GetUploadVideoResult(string filename, string headline, string location, int userId);
+        Task<OperResult<int>> SyncVideos();
+
+        OperResult<List<TBVideos>> GitVideoList();
+
     }
 }

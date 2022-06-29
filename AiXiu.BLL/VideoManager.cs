@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,35 @@ namespace AiXiu.BLL
                 return OperResult<CreateUploadVideoResult>.Failed();
             }
 
+        }
+
+        public OperResult<List<TBVideos>> GitVideoList()
+        {
+            IVideoService videoService = new VideoService();
+            List<TBVideos> videoList = videoService.GetVideoList();
+            return OperResult<List<TBVideos>>.Succeed(videoList);
+        }
+
+        public async Task<OperResult<int>> SyncVideos()
+        {
+            //1、获取待处理的视频id列表
+            //2、调用阿里云视频点播接口得到 这一堆id的对应视频信息
+            //3、调用数据库更新视频状态
+            IVideoService videoService = new VideoService();
+            List<string> videoIdList = videoService.GetInProcessVideoIds();
+
+            IVodService vodService = new VodService();
+            GetVideoInfosResult getVideoInfosResult = vodService.GetVideoInfos(videoIdList);
+
+            List<TBVideos> tBVideosList = getVideoInfosResult.VideoList.Select(e => new TBVideos
+            {
+                CoverURL = e.CoverURL,
+                Status = (int)e.Status,
+                VideoId = e.VideoId
+            }).ToList();
+            await videoService.UpdateVideos(tBVideosList);
+            OperResult<int> operResult = OperResult<int>.Succeed(tBVideosList.Count);
+            return await Task.FromResult(operResult);
         }
     }
 }

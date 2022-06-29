@@ -38,6 +38,7 @@ namespace AiXiu.Model
         [StringLength(100)]
         public string ADDress { get; set; }
         [JsonIgnore]
+
         public virtual TBLogins TBLogins { get; set; }
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

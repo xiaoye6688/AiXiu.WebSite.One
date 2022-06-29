@@ -31,7 +31,7 @@ VideoId varchar(100) primary key,
 UserId int references TBUsers(Id),
 Headline nvarchar(20),
 Location varchar(100),
-CoverURL varchar(20),
+CoverURL varchar(max),
 Status int,
-UploadTime varchar(100)
+UploadTime datetime2(7)
 )

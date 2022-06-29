@@ -14,19 +14,18 @@ namespace AiXiu.Model
 
         public int? UserId { get; set; }
 
-        [StringLength(20)]
+        [StringLength(100)]
         public string Headline { get; set; }
 
-        [StringLength(20)]
+        [StringLength(100)]
         public string Location { get; set; }
 
-        [StringLength(20)]
         public string CoverURL { get; set; }
 
         public int? Status { get; set; }
 
-        [StringLength(100)]
-        public string UploadTime { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime? UploadTime { get; set; }
 
         public virtual TBUsers TBUsers { get; set; }
     }

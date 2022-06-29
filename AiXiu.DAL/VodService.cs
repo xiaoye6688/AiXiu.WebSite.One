@@ -6,6 +6,7 @@ using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 
 namespace AiXiu.DAL
@@ -127,5 +128,7 @@ namespace AiXiu.DAL
             DefaultAcsClient acsClient = InitVodClient();
             acsClient.GetAcsResponse(deleteRequest);
         }
+
+       
     }
 }

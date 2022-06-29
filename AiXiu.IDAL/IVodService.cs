@@ -35,5 +35,7 @@ namespace AiXiu.IDAL
         /// </summary>
         /// <param name="videoIds">视频Id列表</param>
         void DeleteVideos(List<string> videoIds);
+
+
     }
 }

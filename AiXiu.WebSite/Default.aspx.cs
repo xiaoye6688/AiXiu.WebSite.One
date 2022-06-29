@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AiXiu.BLL;
+using AiXiu.IBLL;
 
 namespace AiXiu.WebSite
 {
@@ -11,7 +13,9 @@ namespace AiXiu.WebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            IVideoManager videoManager = new VideoManager();
+            rptVideos.DataSource = videoManager.GitVideoList().Result;
+            rptVideos.DataBind();
         }
     }
 }

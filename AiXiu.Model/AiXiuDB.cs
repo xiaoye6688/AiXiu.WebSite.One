@@ -58,10 +58,6 @@ namespace AiXiu.Model
             modelBuilder.Entity<TBVideos>()
                 .Property(e => e.CoverURL)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<TBVideos>()
-                .Property(e => e.UploadTime)
-                .IsUnicode(false);
         }
     }
 }

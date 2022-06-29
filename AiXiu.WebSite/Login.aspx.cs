@@ -28,23 +28,18 @@ namespace AiXiu.WebSite
                 TBUsers tBUsers = operResult.Result;
                 IdentityManager.SaveUser(tBUsers);
                 string url = "/Default.aspx";
-                if (Request.QueryString["ReturnUrl"]==null)
+                if (Request.QueryString["ReturnUrl"]!=null)
                 {
                     url = Request.QueryString["ReturnUrl"];
                 }
                 PageExtensions.AlertAndRedirect(this, "regSucces", operResult.Message, url);
             }
-            //IUserManager userManager = new UserManager();
-
-            //OperResult operResult = userManager.LoginResult(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-            //if (operResult.StatusCode == StatusCode.Succeed)
-            //{
-            //    PageExtensions.AlertAndRedirect(this, "regSucces", operResult.Message, "Index.aspx");
-            //}
+            
             else
             {
                 PageExtensions.Alert(this, "regSucces", operResult.Message);
             }
+           
         }
     }
 }
