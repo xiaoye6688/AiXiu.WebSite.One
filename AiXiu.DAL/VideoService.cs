@@ -71,7 +71,13 @@ namespace AiXiu.DAL
 
             return db.TBVideos.FirstOrDefault(e => e.VideoId == videoId);
         }
-        
-  
+
+        public List<TBVideos> GetVideoListByUserId(int userId)
+        {
+            AiXiuDB db = new AiXiuDB();
+            List<TBVideos> tBVideos = new List<TBVideos>();
+            tBVideos = db.TBVideos.Where(x => x.UserId == userId).OrderByDescending(e => e.UploadTime).ToList();
+            return tBVideos;
+        }
     }
 }

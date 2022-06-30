@@ -66,6 +66,13 @@ namespace AiXiu.BLL
             return OperResult<List<TBVideos>>.Succeed(videoList);
         }
 
+        public OperResult<List<TBVideos>> GetVideoListById(int userId)
+        {
+            IVideoService videoService = new VideoService();
+            List<TBVideos> videoList = videoService.GetVideoListByUserId(userId);
+            return OperResult<List<TBVideos>>.Succeed(videoList);
+        }
+
         public async Task<OperResult<int>> SyncVideos()
         {
             //1、获取待处理的视频id列表

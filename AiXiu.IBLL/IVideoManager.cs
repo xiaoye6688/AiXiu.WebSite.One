@@ -13,6 +13,7 @@ namespace AiXiu.IBLL
         Task<OperResult<int>> SyncVideos();
 
         OperResult<List<TBVideos>> GetVideoList();
+        OperResult<List<TBVideos>> GetVideoListById(int userId);
 
         OperResult<TBVideos> GetVideoById(string videoId);
 

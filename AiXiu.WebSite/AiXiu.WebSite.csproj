@@ -153,6 +153,7 @@
     <Content Include="lib\template7\dist\template7.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Mobile.aspx" />
+    <Content Include="MyVideos.aspx" />
     <Content Include="Personal.aspx" />
     <Content Include="PersonalEdit.aspx" />
     <Content Include="Play.aspx" />
@@ -209,6 +210,13 @@
     </Compile>
     <Compile Include="Mobile.aspx.designer.cs">
       <DependentUpon>Mobile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyVideos.aspx.cs">
+      <DependentUpon>MyVideos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyVideos.aspx.designer.cs">
+      <DependentUpon>MyVideos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personal.aspx.cs">
       <DependentUpon>Personal.aspx</DependentUpon>
