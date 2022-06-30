@@ -189,6 +189,11 @@ namespace AiXiu.BLL
                 return OperResult.Failed();
             }
         }
-    
-}
+
+        public OperResult<TBUsers> GetAuthorById(int userId)
+        {
+            IUserService userService = new UserService();
+            return OperResult<TBUsers>.Succeed(userService.GetTBUsers(userId));
+        }
+    }
 }

@@ -124,6 +124,5 @@ namespace AiXiu.DAL
             }
             return false;
         }
-
     }
 }

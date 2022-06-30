@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AiXiu.WebSite
 {
-    public partial class Site2 : System.Web.UI.MasterPage
+    public partial class Videos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -18,5 +18,6 @@ namespace AiXiu.IBLL
         OperResult LoginResult(string userName, string pwd);
         OperResult<TBUsers>EditWithoutAvatar(TBUsers tBUsers);
         OperResult<TBUsers> EditAvatar(TBUsers tBUsers);
+        OperResult<TBUsers> GetAuthorById(int userId);
     }
 }

@@ -12,7 +12,13 @@ namespace AiXiu.IBLL
         OperResult<CreateUploadVideoResult> GetUploadVideoResult(string filename, string headline, string location, int userId);
         Task<OperResult<int>> SyncVideos();
 
-        OperResult<List<TBVideos>> GitVideoList();
+        OperResult<List<TBVideos>> GetVideoList();
+
+        OperResult<TBVideos> GetVideoById(string videoId);
+
+
+        OperResult<GetPlayInfoResult> GetPlayInfoResultById(string videoId);
+
 
     }
 }

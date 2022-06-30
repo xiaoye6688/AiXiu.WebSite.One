@@ -64,5 +64,14 @@ namespace AiXiu.DAL
             tBVideos = db.TBVideos.Where(x => x.Status == status).Include(m => m.TBUsers).OrderByDescending(e => e.UploadTime).ToList();
             return tBVideos;
         }
+
+        public TBVideos GetVideoById(string videoId)
+        {
+            AiXiuDB db = new AiXiuDB();
+
+            return db.TBVideos.FirstOrDefault(e => e.VideoId == videoId);
+        }
+        
+  
     }
 }

@@ -24,5 +24,8 @@ namespace AiXiu.IDAL
         Task UpdateVideos(List<TBVideos> videos);
 
         List<TBVideos> GetVideoList();
+        TBVideos GetVideoById(string videoId);
+
+        
     }
 }

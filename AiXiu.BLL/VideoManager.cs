@@ -13,6 +13,11 @@ namespace AiXiu.BLL
 {
     public class VideoManager : IVideoManager
     {
+        public OperResult<GetPlayInfoResult> GetPlayInfoResultById(string videoId)
+        {
+            IVodService vodService = new VodService();
+            return OperResult<GetPlayInfoResult>.Succeed(vodService.GetPlayInfo(videoId));
+        }
 
         public OperResult<CreateUploadVideoResult> GetUploadVideoResult(string filename, string headline, string location, int userId)
         {
@@ -48,7 +53,13 @@ namespace AiXiu.BLL
 
         }
 
-        public OperResult<List<TBVideos>> GitVideoList()
+        public OperResult<TBVideos> GetVideoById(string videoId)
+        {
+            IVideoService videoService = new VideoService();
+            return OperResult<TBVideos>.Succeed(videoService.GetVideoById(videoId));
+        }
+
+        public OperResult<List<TBVideos>> GetVideoList()
         {
             IVideoService videoService = new VideoService();
             List<TBVideos> videoList = videoService.GetVideoList();
@@ -76,5 +87,7 @@ namespace AiXiu.BLL
             OperResult<int> operResult = OperResult<int>.Succeed(tBVideosList.Count);
             return await Task.FromResult(operResult);
         }
+
+
     }
 }

@@ -14,7 +14,7 @@ namespace AiXiu.WebSite
         protected void Page_Load(object sender, EventArgs e)
         {
             IVideoManager videoManager = new VideoManager();
-            rptVideos.DataSource = videoManager.GitVideoList().Result;
+            rptVideos.DataSource = videoManager.GetVideoList().Result;
             rptVideos.DataBind();
         }
     }
