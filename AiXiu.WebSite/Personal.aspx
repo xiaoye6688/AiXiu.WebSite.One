@@ -105,6 +105,22 @@
                             </div>
                         </a>
                     </li>
+                    <li>
+                        <asp:LinkButton ID="lbtLoginOut" OnClick="lbtLoginOut_Click" class="item-link item-content" runat="server">
+                            <div class ="item-media"><i class="f7-icons">arrowshape_turn_up_left</i></div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    退出登录
+                                </div>
+                            </div>
+                        </asp:LinkButton>
+                        <%--<a href="Publish.aspx" class="item-link item-content external">
+                            <div class="item-media"><i class="f7-icons">camera</i></div>
+                            <div class="item-inner">
+                                <div class="item-title">退出登录</div>
+                            </div>
+                        </a>--%>
+                    </li>
                 </ul>
             </div>
         </div>

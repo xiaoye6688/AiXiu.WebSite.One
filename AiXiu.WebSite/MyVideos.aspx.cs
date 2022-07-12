@@ -27,6 +27,8 @@ namespace AiXiu.WebSite
                 {
                     Response.Redirect("~/Login.aspx");
                 }
+                
+                
             }
         }
         public string GetVideoStatus(int status)

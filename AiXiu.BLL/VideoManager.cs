@@ -13,6 +13,16 @@ namespace AiXiu.BLL
 {
     public class VideoManager : IVideoManager
     {
+        public void DeleteVideo(string videoId)
+        {
+            //从数据库删除
+            IVideoService videoService = new VideoService();
+            videoService.DeleteVideo(videoId);
+            //从阿里云删除
+            IVodService vodService = new VodService();
+            vodService.DeleteVideos(new List<string> { videoId });
+        }
+
         public OperResult<GetPlayInfoResult> GetPlayInfoResultById(string videoId)
         {
             IVodService vodService = new VodService();

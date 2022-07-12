@@ -27,7 +27,8 @@
                             </div>
                         </div>
                         <div class="swipeout-actions-right">
-                            <a href="#" class="swipeout-delete">删除</a>
+                            <%-- <div class ="item-media swipeout-delete"><i class="f7-icons">trash_circle_fill</i></div>--%>
+                            <a href="#" class="swipeout-delete"><div class ="item-media"><i class="f7-icons">trash</i></div></a>
                         </div>
                     </li>
                 </ItemTemplate>
@@ -44,7 +45,7 @@
         // 删除视频时，异步删除完整视频文件
         $$('.deleted-callback').on('swipeout:deleted', function () {
             var videoId = $$(this).data('id');
-            app.request.get('VideoDeleteHandler.ashx', { videoId: videoId });
+            app.request.get('Ashx/VideoDeleteHandler.ashx', { videoId: videoId });
         });
     </script>
 </asp:Content>

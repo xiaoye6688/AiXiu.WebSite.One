@@ -26,6 +26,7 @@ namespace AiXiu.IDAL
         List<TBVideos> GetVideoList();
         TBVideos GetVideoById(string videoId);
         List<TBVideos> GetVideoListByUserId(int userId);
+        void DeleteVideo(string videoId);
 
 
     }

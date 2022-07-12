@@ -60,6 +60,9 @@
     <Compile Include="OperResult\OperResult.cs" />
     <Compile Include="OperResult\StatusCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redis\Discuss.cs" />
+    <Compile Include="Redis\Friend.cs" />
+    <Compile Include="Redis\Message.cs" />
     <Compile Include="TBLogins.cs" />
     <Compile Include="TBUsers.cs" />
     <Compile Include="TBVideos.cs" />

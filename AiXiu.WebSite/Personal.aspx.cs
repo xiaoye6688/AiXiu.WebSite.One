@@ -43,6 +43,10 @@ namespace AiXiu.WebSite
                     lblAddress.Text = tBUsers.ADDress;
 
                 }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 //显示用户资料
                 //this.imgAvatar.ImageUrl = tBUsers.Avatar  ??  "/imgs/avatar.jpg";
                 //this.lblNickName.Text = tBUsers.NickName ?? $"用户{tBUsers.Id}";
@@ -68,5 +72,10 @@ namespace AiXiu.WebSite
 
         }
 
+        protected void lbtLoginOut_Click(object sender, EventArgs e)
+        {
+            IdentityManager.LoginOut();
+            Response.Redirect("Login.aspx");
+        }
     }
 }

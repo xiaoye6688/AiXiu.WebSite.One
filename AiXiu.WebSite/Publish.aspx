@@ -58,7 +58,7 @@
                     poiScript.src = 'http://api.map.baidu.com/place/v2/search' +
                         '?query=美食$酒店$购物$丽人$旅游景点$休闲娱乐$运动健身$文化传媒$交通设施$公司企业' +
                         '&location=' + r.point.lat + ',' + r.point.lng +
-                        '&radius=500' +
+                        '&radius=1000' +
                         '&output=json' +
                         '&ak=' + mapAK +
                         '&callback=showpois';

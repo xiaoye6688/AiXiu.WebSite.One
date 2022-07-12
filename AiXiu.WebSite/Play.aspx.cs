@@ -16,8 +16,8 @@ namespace AiXiu.WebSite
         public TBUsers Author;
         public bool IsLike;
         public string VideoId;
-        public int LikeCount;
-        public int DiscussCount;
+        public long LikeCount;
+        public long DiscussCount;
         public int UserId;
         public GetPlayInfoResult playInfo;
         protected void Page_Load(object sender, EventArgs e)
@@ -39,9 +39,12 @@ namespace AiXiu.WebSite
                 //3、播放视频信息
                 playInfo = videoManager.GetPlayInfoResultById(VideoId).Result;
                 //评论点赞
-                IsLike = false;
-                LikeCount = 0;
-                DiscussCount = 0;
+                ILikeManager likeManager = new LikeManager();
+                
+                IsLike = likeManager.IsLike(VideoId, UserId);
+                LikeCount = likeManager.Count(VideoId);
+                IDiscussManager discuss = new DiscussManager();
+                DiscussCount = discuss.Count(VideoId);
             }
             else
             {

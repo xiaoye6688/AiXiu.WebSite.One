@@ -1,14 +1,36 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Videos.aspx.cs" Inherits="AiXiu.WebSite.Videos" %>
+
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
-        .videos { width: 100%; }
-            .videos .item { width: 49%; margin-left: 0.5%; margin-right: 0.5%; float: left; padding-bottom: 0.6em; }
-            .videos img { width: 100%; height: auto; }
+        .videos {
+            width: 100%;
+        }
+
+            .videos .item {
+                width: 49%;
+                margin-left: 0.5%;
+                margin-right: 0.5%;
+                float: left;
+                padding-bottom: 0.6em;
+            }
+
+            .videos img {
+                width: 100%;
+                height: auto;
+            }
+
+        .fanhui {
+            color: black;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
     <div class="page" data-page="user-videos">
         <div class="page-content">
+            <a href="#" class="fanhui">
+                <div class="item-media"><i class="f7-icons">arrowshape_turn_up_left_circle</i></div>
+            </a>
+
             <div class="block-title">TA的个人信息</div>
             <div class="block block-strong personal margin-top-none">
                 <div class="row">
@@ -48,14 +70,15 @@
                 </asp:Repeater>
             </div>
             <div class="block block-strong" id="btnFriendBlock" runat="server">
-                <asp:Button ID="btnFriend" runat="server" Text="加为好友" CssClass="button button-large button-outline button-fill" OnClick="btnFriend_Click" />
-                <asp:Button ID="btnMessage" runat="server" Text="立即聊天" CssClass="button button-large button-outline button-fill" OnClick="btnMessage_Click" />
+                <asp:Button ID="btnFriend" Visible="false" Enabled="false" runat="server" Text="加为好友" CssClass="button button-large button-outline button-fill" OnClick="btnFriend_Click" />
+                <asp:Button ID="btnMessage" Visible="false" Enabled="false" runat="server" Text="立即聊天" CssClass="button button-large button-outline button-fill" OnClick="btnMessage_Click" />
             </div>
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="ScriptContent" ContentPlaceHolderID="ScriptContent" runat="server">
     <script src="lib/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="Scripts/jquery-1.12.4.js"></script>
     <script>
         // 图片懒加载
         app.on('lazyLoaded', function () {
@@ -66,5 +89,12 @@
                 percentPosition: true
             })
         })
+
+
     </script>
+    <%--<script>
+        $('.fanhui').on('click', function () {
+            alert('按钮已点击');
+        })
+    </script>--%>
 </asp:Content>

@@ -19,7 +19,7 @@ namespace AiXiu.IBLL
 
 
         OperResult<GetPlayInfoResult> GetPlayInfoResultById(string videoId);
-
+        void DeleteVideo(string videoId);
 
     }
 }

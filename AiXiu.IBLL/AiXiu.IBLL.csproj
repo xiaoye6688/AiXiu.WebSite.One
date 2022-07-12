@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDiscussManager.cs" />
+    <Compile Include="IFriendManager.cs" />
+    <Compile Include="ILikeManager.cs" />
     <Compile Include="IUserManager.cs" />
     <Compile Include="IVideoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

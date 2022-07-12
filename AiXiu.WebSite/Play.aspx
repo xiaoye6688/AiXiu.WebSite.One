@@ -35,7 +35,7 @@
                 <i class="like-icon icon f7-icons <%=IsLike?"text-color-pink":"text-color-white"%> size-42">heart_fill</i>
             </a>
             <p class="like-count text-color-white text-align-center no-margin-top"><%=LikeCount%></p>
-            <a href="Discuss.aspx?id=<%=VideoId%>" class="discuss box-shadow-none bg-color-none external">
+            <a href="VideoDiscuss.aspx?id=<%=VideoId%>" class="discuss box-shadow-none bg-color-none external">
                 <i class="discuss-icon icon f7-icons text-color-white size-42">chat_bubble_text</i>
             </a>
             <p class="discuss-count text-color-white text-align-center no-margin-top"><%=DiscussCount%></p>
@@ -71,13 +71,13 @@
             if ($$likeIcon.hasClass('text-color-white')) {
                 $$likeIcon.removeClass('text-color-white').addClass('text-color-pink');
                 $$likeCount.html(parseInt($$('.page .like-count').html()) + 1);
-                app.request.get('VideoLikeHandler.ashx', { videoId: videoId, userId: userId, action: 'add' });
+                app.request.get('Ashx/VideoLikeHandler.ashx', { videoId: videoId, userId: userId, action: 'add' });
             }
             // 已点赞
             else {
                 $$likeIcon.removeClass('text-color-pink').addClass('text-color-white');
                 $$likeCount.html(parseInt($$('.page .like-count').html()) - 1);
-                app.request.get('VideoLikeHandler.ashx', { videoId: videoId, userId: userId, action: 'remove' });
+                app.request.get('Ashx/VideoLikeHandler.ashx', { videoId: videoId, userId: userId, action: 'remove' });
             }
         })
     </script>

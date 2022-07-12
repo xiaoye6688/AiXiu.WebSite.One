@@ -79,5 +79,18 @@ namespace AiXiu.DAL
             tBVideos = db.TBVideos.Where(x => x.UserId == userId).OrderByDescending(e => e.UploadTime).ToList();
             return tBVideos;
         }
+
+        public void DeleteVideo(string videoId)
+        {
+            AiXiuDB db = new AiXiuDB();
+            TBVideos tBVideos = db.TBVideos.SingleOrDefault(e => e.VideoId == videoId);
+            if (tBVideos!=null)
+            {
+                db.Entry(tBVideos).State = EntityState.Deleted;
+                db.SaveChanges();
+            }
+
+
+        }
     }
 }

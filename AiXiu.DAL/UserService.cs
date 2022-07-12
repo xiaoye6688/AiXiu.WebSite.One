@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using System.Data.Common;
 
 namespace AiXiu.DAL
 {
@@ -12,37 +15,67 @@ namespace AiXiu.DAL
     {
         public bool AddUser(TBLogins tBLogins)
         {
-            //1、login   得到id      2、创建user   赋值给uses  id
-            //创建数据访问上下文
+            //1、准备存储过程参数
+            //2、初始化数据库命令（创建command对象、文本、类型、参数）
+            //3、执行存储过程（连接状态、执行、关闭连接）
+            //4、得到返回结果
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@UserName",tBLogins.UserName),
+                 new SqlParameter("@MobileNumber",tBLogins.MobileNumber),
+                new SqlParameter("@Password",tBLogins.Password),
+                new SqlParameter("@userId",SqlDbType.Int),
+
+            };
+            sqlParameters[3].Direction = ParameterDirection.Output;
             AiXiuDB aiXiuModel = new AiXiuDB();
-            //将得到的登录实体类型附加到ef容器中
-            aiXiuModel.TBLogins.Add(tBLogins);
-            //执行保存操作，判断如果添加成功继续添加用户表信息
-            if (aiXiuModel.SaveChanges() > 0)
+            DbCommand dbCommand = aiXiuModel.Database.Connection.CreateCommand();
+            dbCommand.CommandType = CommandType.StoredProcedure;
+            dbCommand.CommandText = "[P_User_Reg]";
+            dbCommand.Parameters.AddRange(sqlParameters);
+            if (dbCommand.Connection.State==ConnectionState.Closed)
             {
-                //创建用户表模型
-                TBUsers tBUsersModel = new TBUsers()
-                {
-                    Id = tBLogins.Id,
-                    Sex = 0,
-                    CreationTime = DateTime.Now
-                };
-                //将得到的登录实体类型附加到ef容器中
-                aiXiuModel.TBUsers.Add(tBUsersModel);
-                //执行保存操作，判断是否成功
-                if (aiXiuModel.SaveChanges() > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                dbCommand.Connection.Open();
             }
-            else
+            dbCommand.ExecuteNonQuery();
+            if (dbCommand.Connection.State == ConnectionState.Open)
             {
-                return false;
+                dbCommand.Connection.Close();
             }
+            int userId = (int)sqlParameters[3].Value;
+            return userId > 0;
+
+            ////1、login   得到id      2、创建user   赋值给uses  id
+            ////创建数据访问上下文
+            //AiXiuDB aiXiuModel = new AiXiuDB();
+            ////将得到的登录实体类型附加到ef容器中
+            //aiXiuModel.TBLogins.Add(tBLogins);
+            ////执行保存操作，判断如果添加成功继续添加用户表信息
+            //if (aiXiuModel.SaveChanges() > 0)
+            //{
+            //    //创建用户表模型
+            //    TBUsers tBUsersModel = new TBUsers()
+            //    {
+            //        Id = tBLogins.Id,
+            //        Sex = 0,
+            //        CreationTime = DateTime.Now
+            //    };
+            //    //将得到的登录实体类型附加到ef容器中
+            //    aiXiuModel.TBUsers.Add(tBUsersModel);
+            //    //执行保存操作，判断是否成功
+            //    if (aiXiuModel.SaveChanges() > 0)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+            //else
+            //{
+            //    return false;
+            //}
         }
 
         public TBUsers EditWithoutAvatar(TBUsers tBUsers)

@@ -58,5 +58,14 @@ namespace AiXiu.BLL
             TBUsers user = JsonConvert.DeserializeObject<TBUsers>(userData);
             return user;
         }
+        public static void LoginOut()
+        {
+            //删除票据
+            FormsAuthentication.SignOut();
+            //清除cookie
+            HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName].Expires = DateTime.Now.AddDays(-1);
+            HttpContext.Current.Request.Cookies.Remove(FormsAuthentication.FormsCookieName);
+
+        }
     }
 }

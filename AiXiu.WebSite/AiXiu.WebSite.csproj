@@ -160,12 +160,14 @@
     <Content Include="Publish.aspx" />
     <Content Include="Reg.aspx" />
     <Content Include="Scripts\aliyun-upload-sdk-1.5.2.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery.signalR-2.4.1.js" />
     <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
     <Content Include="Scripts\lib\aliyun-oss-sdk-6.13.0.min.js" />
     <Content Include="Scripts\lib\es6-promise.min.js" />
+    <Content Include="VideoDiscuss.aspx" />
     <Content Include="Videos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -174,8 +176,20 @@
     <Compile Include="Ashx\CaptchaHandler.ashx.cs">
       <DependentUpon>CaptchaHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Ashx\DiscussListHandler.ashx.cs">
+      <DependentUpon>DiscussListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ashx\DiscussPublishHandler.ashx.cs">
+      <DependentUpon>DiscussPublishHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ashx\ImageUploadHandler.ashx.cs">
       <DependentUpon>ImageUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ashx\VideoDeleteHandler.ashx.cs">
+      <DependentUpon>VideoDeleteHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ashx\VideoLikeHandler.ashx.cs">
+      <DependentUpon>VideoLikeHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Ashx\VideoUploadHandler.ashx.cs">
       <DependentUpon>VideoUploadHandler.ashx</DependentUpon>
@@ -261,6 +275,13 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="VideoDiscuss.aspx.cs">
+      <DependentUpon>VideoDiscuss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoDiscuss.aspx.designer.cs">
+      <DependentUpon>VideoDiscuss.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Videos.aspx.cs">
       <DependentUpon>Videos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,6 +300,10 @@
     <Content Include="Ashx\ImageUploadHandler.ashx" />
     <Content Include="Ashx\VideoUploadHandler.ashx" />
     <Content Include="log4net.config" />
+    <Content Include="Ashx\VideoDeleteHandler.ashx" />
+    <Content Include="Ashx\VideoLikeHandler.ashx" />
+    <Content Include="Ashx\DiscussPublishHandler.ashx" />
+    <Content Include="Ashx\DiscussListHandler.ashx" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
