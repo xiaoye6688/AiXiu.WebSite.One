@@ -30,11 +30,11 @@ namespace AiXiu.BLL
                 LastMessage = new Message()
                 {
                     AddTime = nowTime,
-                    Content = "hi~我是"+ otherUser.NickName,
+                    Content = "hi~我是" + otherUser.NickName,
                     UserId = otherId
                 }
             };
-            bool addSelfFriendResult=RedisHelper.HashSet(selfKey, otherId.ToString(), selfAddFriend);
+            bool addSelfFriendResult = RedisHelper.HashSet(selfKey, otherId.ToString(), selfAddFriend);
             //好友添加我
             Friend otherAddFriend = new Friend()
             {
@@ -50,6 +50,13 @@ namespace AiXiu.BLL
             };
             bool addOtherFriendResult = RedisHelper.HashSet(otherKey, selfId.ToString(), otherAddFriend);
             return addSelfFriendResult && addOtherFriendResult;
+        }
+
+        public Dictionary<int, Friend> GetFriendList(int userId)
+        {
+            string selfKey = $"{keyPrefix}_{userId}";
+            Dictionary<string, Friend> list = RedisHelper.HashGetAll<Friend>(selfKey);
+            return list.ToDictionary(x => int.Parse(x.Key), x => x.Value);
         }
 
         public bool IsFriend(int selfId, int otherId)

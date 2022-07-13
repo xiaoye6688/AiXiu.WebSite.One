@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AiXiu.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace AiXiu.IBLL
         bool IsFriend(int selfId, int otherId);
         //添加好友，selfId为自己的id，other为对方id
         bool AddFriend(int selfId, int otherId);
+        Dictionary<int, Friend> GetFriendList(int userId);
     }
 }
