@@ -9,10 +9,22 @@ namespace AiXiu.IBLL
 {
     public interface IFriendManager
     {
-        //是否好友，selfId为自己的id，other为对方id
+        /// <summary>
+        /// 是否好友
+        /// </summary>
+        /// <param name="selfId">自己的id</param>
+        /// <param name="otherId">对方id</param>
+        /// <returns></returns>
         bool IsFriend(int selfId, int otherId);
-        //添加好友，selfId为自己的id，other为对方id
+        /// <summary>
+        /// 添加好友
+        /// </summary>
+        /// <param name="selfId">自己的id</param>
+        /// <param name="otherId">对方id</param>
+        /// <returns></returns>
         bool AddFriend(int selfId, int otherId);
         Dictionary<int, Friend> GetFriendList(int userId);
+        bool SendMessage(int selfId, int otherId, string context);
+        List<Message> GetMessageList(int selfId, int otherId, int pageNumber, int pageSize);
     }
 }

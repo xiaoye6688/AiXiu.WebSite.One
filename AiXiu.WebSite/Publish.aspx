@@ -40,7 +40,7 @@
     <script src="Scripts/aliyun-upload-sdk-1.5.2.min.js"></script>
     <script>
         // 调用百度地图API获取附近地点
-        var mapAK = '**************';
+        var mapAK = 'hqDZODEUODrRV2Q0XUVcUMd4tCfBtN1C';
         window.onload = function () {
             // 异步加载Web服务API
             var mapScript = document.createElement("script");

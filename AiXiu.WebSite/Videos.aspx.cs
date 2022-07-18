@@ -115,7 +115,13 @@ namespace AiXiu.WebSite
 
         protected void btnMessage_Click(object sender, EventArgs e)
         {
-
+            int avatarId = 0;
+            if (!string.IsNullOrWhiteSpace(Request.QueryString["id"]))
+            {
+                int.TryParse(Request.QueryString["id"], out avatarId);
+            }
+            //跳转到chat页面
+            PageExtensions.Redirect(this, "refSucces", "Chat.aspx?to=" + avatarId);
         }
     }
 }
